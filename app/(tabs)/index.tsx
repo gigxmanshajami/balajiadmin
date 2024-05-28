@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, View, Text, Pressable, TextInput, TouchableOpacity, Alert, Vibration, Modal, } from 'react-native';
+import { Image, StyleSheet, Platform, View, Text, Pressable, TextInput, TouchableOpacity, Alert, Vibration, Modal, ScrollView, } from 'react-native';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Link } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
@@ -71,7 +71,7 @@ export default function HomeScreen() {
     }
   }
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       {/* <Link push href={"/login"}>
         <Text style={{
           color: "#fff",
@@ -192,6 +192,7 @@ export default function HomeScreen() {
       <Pressable onPress={upload} style={{
         marginTop: 20, borderColor: colorScheme === 'dark' ? "#fff" : "#000", padding: 15,
         borderWidth: 1,
+        marginBottom:40,
         borderRadius: 10,
         alignItems: "center",
       }}>
@@ -201,7 +202,7 @@ export default function HomeScreen() {
           color: colorScheme === 'dark' ? "#fff" : "#000",
         }}>UPLOAD</Text>
       </Pressable>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -218,6 +219,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    paddingTop:20,
   },
   reactLogo: {
     height: 178,
